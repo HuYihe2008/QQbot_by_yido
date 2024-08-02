@@ -23,7 +23,16 @@ _log: Logger = logging.get_logger()
 
 # 自定义客户端类
 class MyClient(botpy.Client):
-    handlers = [msg_send.weather, msg_send.menu, msg_send.tarot_card, msg_send.sega, msg_send.help_command, msg_send.why_show_cry, msg_send.why_show_cry2]
+    handlers = [
+        msg_send.weather,
+        msg_send.menu,
+        msg_send.tarot_card,
+        msg_send.sega,
+        msg_send.help_command,
+        msg_send.why_show_cry,
+        msg_send.why_show_cry2,
+        msg_send.group_manner,
+    ]
 
     async def on_ready(self):
         _log.info(f"机器人「{self.robot.name}」 准备就绪!")

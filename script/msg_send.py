@@ -8,7 +8,8 @@ from botpy.message import GroupMessage, C2CMessage
 
 from features.weather.weather import weather_search
 from utils.event import is_group_message, group_event_ids
-import features.tarot.tarot_card as tarot
+import features.playsystem.tarot.tarot_card as tarot
+from features.playsystem.attendance import attendance
 
 
 # 读取配置文件
@@ -51,12 +52,23 @@ def CustomCommand(name, ignore_commands=None):
 @CustomCommand('菜单')
 async def menu(api: botpy.BotAPI, message: GroupMessage, c2cmessage: C2CMessage, params=None):
     _log.info("菜单命令被调用")
+    menu_text = """欢迎使用yidobot机器人！
+【本菜单提供的是娱乐系统指令，其他指令请见帮助】
+- 📜 签到：每日签到 
+    例：@机器人 签到
+- 🃏塔罗牌：抽取塔罗牌
+    例：@机器人 塔罗牌
+- 🙏 帮助：获取其他指令 
+    例：@机器人 帮助"""
     if message:
         _log.warning(f"发送菜单信息到群聊：{message.group_openid}")
-        await message.reply(content='菜单功能正在开发中...（群聊）')
+        await message.reply(content='菜单功能正在开发中...（群聊）', msg_seq="1")
+
+        await message.reply(content=menu_text, msg_seq="2")
     elif c2cmessage:
         _log.warning(f"发送菜单信息到私聊：{c2cmessage.author.user_openid}")
-        await c2cmessage.reply(content='菜单功能正在开发中...（私聊）')
+        await c2cmessage.reply(content='菜单功能正在开发中...（私聊）', msg_seq="1")
+        await c2cmessage.reply(content=menu_text, msg_seq="2")
 
 
 # 天气命令
@@ -305,14 +317,31 @@ async def why_show_cry2(api: botpy.BotAPI, message: GroupMessage, c2cmessage: C2
 @CustomCommand('帮助')
 async def help_command(api: botpy.BotAPI, message: GroupMessage, c2cmessage: C2CMessage, params=None):
     help_text = """可用命令列表：
-    - 💩菜单：显示菜单
-    - 🌥️天气：查询天气信息
-    - 🃏塔罗牌：抽取塔罗牌
-    - 🦌鹿：小彩蛋
-    - 🎸为什么要弹春日影/为什么要演奏春日影：小彩蛋2"""
+- 💩菜单：显示娱乐系统功能菜单 
+    例：@机器人 菜单
+- 🌥️天气：查询天气信息 
+    例：@机器人 天气 上海市（城市名称需要带省市县）
+- 🦌鹿：小彩蛋 
+    例：@机器人 鹿
+- 🎸为什么要弹春日影/为什么要演奏春日影：小彩蛋2 
+    例：@机器人 为什么要弹春日影 或 @机器人 为什么要演奏春日影"""
     if message:
         await message.reply(content=help_text)
         _log.info(f"发送帮助信息到群聊：{message.group_openid}")
     elif c2cmessage:
         await c2cmessage.reply(content=help_text)
         _log.info(f"发送帮助信息到私聊：{c2cmessage.author.user_openid}")
+
+
+@CustomCommand('签到')
+async def group_manner(api: botpy.BotAPI, message: GroupMessage, c2cmessage: C2CMessage, params=None):
+    try:
+        if message:
+            await attendance(message)
+            # await message.reply(content='签到成功！')
+            _log.info(f"发送签到信息到群聊：{message.group_openid},{message.author.member_openid}")
+        elif c2cmessage:
+            await c2cmessage.reply(content='请在群聊内使用功能')
+            _log.info(f"发送签到信息到私聊：{c2cmessage.author.user_openid}")
+    except Exception as e:
+        _log.error(f"签到命令失败: {e}")

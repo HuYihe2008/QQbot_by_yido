@@ -1,0 +1,5 @@
+pyppeteer~=2.0.0
+requests~=2.32.3
+pilk~=0.2.4
+aiohttp~=3.9.5
+qq-botpy

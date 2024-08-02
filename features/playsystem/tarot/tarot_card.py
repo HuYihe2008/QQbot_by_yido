@@ -6,7 +6,7 @@ from botpy import logging
 from botpy.ext.cog_yaml import read
 
 # 读取配置
-config = read(os.path.join(os.path.dirname(__file__), "../../config/config.yaml"))
+config = read(os.path.join(os.path.dirname(__file__), "../../../config/config.yaml"))
 
 _log = logging.get_logger()
 
