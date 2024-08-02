@@ -142,7 +142,7 @@ async def sega(api: botpy.BotAPI, message: GroupMessage, c2cmessage: C2CMessage,
             media = await api.post_group_file(
                 group_openid=message.group_openid,
                 file_type=3,
-                url="https://raw.githubusercontent.com/HuYihe2008/QQbot_by_yido/master/source/%E9%B9%BF.silk"
+                url="https://8q9lug.dm.files.1drv.com/y4mhi44W9yc_bjyzpTA09BvQ_2HQZzSyp_spXwkg6P-qB7tAK3Unn-XAZkIQa8Lfm9-cx7WMkZkwqfZ-j_zVxoLsU1egue52ItBZXGTHAzxfuyCGoYBjY0DeT1GR0LDIhQRtCo5ltklhMtODJHCKrpwzxRi7SUXZpEAQl7gpkc0sjxGL9aP6LLEKPR79gKyYU060LZkUWJYPcPf6vpkZ8sLKA"
             )
             await api.post_group_message(
                 group_openid=message.group_openid,
@@ -156,7 +156,7 @@ async def sega(api: botpy.BotAPI, message: GroupMessage, c2cmessage: C2CMessage,
             media = await api.post_c2c_file(
                 openid=c2cmessage.author.user_openid,
                 file_type=3,
-                url="https://raw.githubusercontent.com/HuYihe2008/QQbot_by_yido/master/source/%E9%B9%BF.silkk"
+                url="https://8q9lug.dm.files.1drv.com/y4mhi44W9yc_bjyzpTA09BvQ_2HQZzSyp_spXwkg6P-qB7tAK3Unn-XAZkIQa8Lfm9-cx7WMkZkwqfZ-j_zVxoLsU1egue52ItBZXGTHAzxfuyCGoYBjY0DeT1GR0LDIhQRtCo5ltklhMtODJHCKrpwzxRi7SUXZpEAQl7gpkc0sjxGL9aP6LLEKPR79gKyYU060LZkUWJYPcPf6vpkZ8sLKA"
             )
             await c2cmessage.reply(content="sega!", msg_seq="2")
             await api.post_c2c_message(
