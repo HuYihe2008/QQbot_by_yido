@@ -142,7 +142,7 @@ async def sega(api: botpy.BotAPI, message: GroupMessage, c2cmessage: C2CMessage,
             media = await api.post_group_file(
                 group_openid=message.group_openid,
                 file_type=3,
-                url="https://8q9lug.dm.files.1drv.com/y4mhi44W9yc_bjyzpTA09BvQ_2HQZzSyp_spXwkg6P-qB7tAK3Unn-XAZkIQa8Lfm9-cx7WMkZkwqfZ-j_zVxoLsU1egue52ItBZXGTHAzxfuyCGoYBjY0DeT1GR0LDIhQRtCo5ltklhMtODJHCKrpwzxRi7SUXZpEAQl7gpkc0sjxGL9aP6LLEKPR79gKyYU060LZkUWJYPcPf6vpkZ8sLKA"
+                url="https://raw.githubusercontent.com/HuYihe2008/QQbot_by_yido/master/source/%E9%B9%BF.silk"
             )
             await api.post_group_message(
                 group_openid=message.group_openid,
@@ -156,7 +156,7 @@ async def sega(api: botpy.BotAPI, message: GroupMessage, c2cmessage: C2CMessage,
             media = await api.post_c2c_file(
                 openid=c2cmessage.author.user_openid,
                 file_type=3,
-                url="https://8q9lug.dm.files.1drv.com/y4mhi44W9yc_bjyzpTA09BvQ_2HQZzSyp_spXwkg6P-qB7tAK3Unn-XAZkIQa8Lfm9-cx7WMkZkwqfZ-j_zVxoLsU1egue52ItBZXGTHAzxfuyCGoYBjY0DeT1GR0LDIhQRtCo5ltklhMtODJHCKrpwzxRi7SUXZpEAQl7gpkc0sjxGL9aP6LLEKPR79gKyYU060LZkUWJYPcPf6vpkZ8sLKA"
+                url="https://raw.githubusercontent.com/HuYihe2008/QQbot_by_yido/master/source/%E9%B9%BF.silkk"
             )
             await c2cmessage.reply(content="sega!", msg_seq="2")
             await api.post_c2c_message(
@@ -180,12 +180,12 @@ async def why_show_cry(api: botpy.BotAPI, message: GroupMessage, c2cmessage: C2C
             media = await api.post_group_file(
                 group_openid=message.group_openid,
                 file_type=3,
-                url="https://9k9lug.dm.files.1drv.com/y4muLe3LLY-vdvZSHWjcimBNu19CztWfmtlhXiiPn-poC-XS2TpTEGsB-QiGcnMOo1pCkiv5UMIjlG6LSUXsegYs5naiP6CRRtJIksLJIhk_hscHw-5LdQa5zpCqYG_dUqBmwiuaSslMA5nA-3b4hs-Oc6V_rXDMXiYK43LtLFIkXpx1fJfoXXXOmFRQOv_DppHWajjhu3AHVvC_O9TsiX-gQ"
+                url="https://raw.gitcode.com/yido/QQbot_by_yido/blobs/642b82d971fd8369f37b8138706468d096043179/MyGO!!!!!%20-%20%E6%98%A5%E6%97%A5%E5%BD%B1.silk"
             )
             media2 = await api.post_group_file(
                 group_openid=message.group_openid,
                 file_type=3,
-                url="https://869lug.dm.files.1drv.com/y4m5lC9o9y4OYs5ElROxAstmnjxtM9VJbllbnEfG0vx6dsZZVNaIWcLup-IjH1hcC-7KC9AWIhKTleKMogkw80lgwosEtL7rg6gWJuwTC_z7oUtYUOJlylFY4BrljFw-NEIdcZRm96jJZ5w7A4hagxqxde8R6Z3HE6mf5V_m0-RM8aM2PlhaqSazdktNV7-cFCHsyp59wGAZa2p94Y5AteshQ"
+                url="https://raw.gitcode.com/yido/QQbot_by_yido/blobs/381b85f63a9acab7f290c9bd2f966ddfb506a3cc/%E7%A9%BA%E3%81%AE%E7%AE%B1.silk"
             )
             await message.reply(content="为什么要演奏春日影!", msg_seq="2")
             await api.post_group_message(
