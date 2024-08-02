@@ -6,16 +6,16 @@ import aiohttp
 import logging
 from botpy import logging  # 确保这个路径是正确的
 
-
-#读取配置
-config = read(os.path.join(os.path.dirname(__file__), "../config/config.yaml"))
+# 读取配置
+config = read(os.path.join(os.path.dirname(__file__), "../../config/config.yaml"))
 
 # 定义日志记录器
 _log = logging.get_logger()
 
 # 这是提供的JSON数据
-with open('./source/tableConvert.com_7k197d.json', 'r') as file:
+with open('./static/json/tableConvert.com_7k197d.json', 'r') as file:
     json_data = json.load(file)
+
 
 async def get_weather_forecast(city_code):
     # API请求部分使用aiohttp
@@ -37,6 +37,7 @@ async def get_weather_forecast(city_code):
                 _log.warning(f"请求失败，状态码：{response.status}")
                 return None
 
+
 async def weather_search(params):
     for item in json_data:
         if params in item:  # 假设params是城市名称，item是包含城市名称的子列表
@@ -53,7 +54,7 @@ async def weather_search(params):
                     output += f"白天天气：{cast['dayweather']}，气温：{cast['daytemp']}°C\n"
                     output += f"夜间天气：{cast['nightweather']}，气温：{cast['nighttemp']}°C\n"
                     output += "-" * 20 + "\n"
-                _log.info(output)
+                _log.info("成功获取天气信息")
                 return output
             else:
                 _log.warning("未能获取天气信息")

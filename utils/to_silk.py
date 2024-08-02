@@ -3,7 +3,7 @@ import os
 import subprocess
 import pilk
 
-audio_url = 'https://m701.music.126.net/20240801103751/1037cf22796aef00e6e2a84be71fa7ba/jdyyaac/obj/w5rDlsOJwrLDjj7CmsOj/44460910191/e8d9/3943/4df9/d09e14b332fafc08aed471d4ec8199b1.m4a'
+audio_url = 'https://m801.music.126.net/20240801185826/eb27705abb9249bd774d6c0704d03e10/jdyyaac/obj/w5rDlsOJwrLDjj7CmsOj/33190764350/7dfb/42ba/a634/847878e08cefa56b21b154af8eed8689.m4a'
 response = requests.get(audio_url)
 audio_data = response.content
 
@@ -37,7 +37,7 @@ except subprocess.CalledProcessError as e:
     print(f"转换失败：{e}")
 
 # 接下来使用pilk进行编码
-silk_output_path = '../source/output.silk'
+silk_output_path = '../source/MyGO!!!!! - 春日影.silk'
 try:
     duration = pilk.encode(pcm_output_path, silk_output_path, pcm_rate=44100, tencent=True)
     print(f"Silk编码成功，文件已保存到：{silk_output_path}")
@@ -46,3 +46,4 @@ except Exception as e:
 
 # 转换完成后，删除临时PCM文件
 os.remove(pcm_output_path)
+os.remove(input_file_path)

@@ -63,18 +63,20 @@ async def tarot_card():
         fortunes = []  # 或者其他默认值
 
     # 输出结果
-    print(f"抽取的塔罗牌编号: {selected_tarot}")
-    print(f"塔罗牌名称（中文）: {selected_card_info['name_cn']}")
-    print(f"图片地址: {image_url}")
-    print("塔罗牌描述:")
-    for description in selected_card_info['description']:
-        print(description)
-    print("塔罗牌含义（正位）:", selected_card_info['meaning']['up'])
-    if 'down' in selected_card_info['meaning']:
-        print("塔罗牌含义（逆位）:", selected_card_info['meaning']['down'])
-    print("抽取的语录:")
-    for fortune in fortunes:
-        print(fortune)
+    # print(f"抽取的塔罗牌编号: {selected_tarot}")
+    # print(f"塔罗牌名称（中文）: {selected_card_info['name_cn']}")
+    # print(f"图片地址: {image_url}")
+    # print("塔罗牌描述:")
+    # for description in selected_card_info['description']:
+    #    print(description)
+    # print("塔罗牌含义（正位）:", selected_card_info['meaning']['up'])
+    # if 'down' in selected_card_info['meaning']:
+    #    print("塔罗牌含义（逆位）:", selected_card_info['meaning']['down'])
+    # print("抽取的语录:")
+    # for fortune in fortunes:
+    #    print(fortune)
+
+    _log.warning(f"成功抽取塔罗牌,编号: {selected_tarot}, 名称: {selected_card_info['name_cn']}, 图片地址: {image_url}")
 
     # 将结果收集到一个字典中
     result = {
