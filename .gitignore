@@ -10,7 +10,6 @@ data
 *.exe
 *.o
 *.so
-*.json
 
 # Packages #
 ############
