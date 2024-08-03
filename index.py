@@ -5,6 +5,7 @@ import botpy
 from botpy import logging
 from botpy.ext.cog_yaml import read
 from botpy.message import GroupMessage, C2CMessage
+from botpy.logging import DEFAULT_FILE_HANDLER
 
 from script import msg_send
 
@@ -19,6 +20,8 @@ config = load_config()
 
 # 日志记录器
 _log: Logger = logging.get_logger()
+# 修改日志路径
+DEFAULT_FILE_HANDLER["filename"] = os.path.join(os.getcwd(), "log", "%(name)s.log")
 
 
 # 自定义客户端类
